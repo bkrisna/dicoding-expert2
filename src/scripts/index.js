@@ -1,39 +1,19 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
+import '../styles/responsive.css';
 import loadData from "./loaddata";
+import App from './views/app';
 
-console.log('Hello Coders! :)');
-
-
-const hamburgerButtonElement = document.querySelector("#mobile-menu");
-const drawerElement = document.querySelector(".nav-list");
-const mainElement = document.querySelector("main");
- 
- 
-hamburgerButtonElement.addEventListener("click", event => {
-    drawerElement.classList.toggle("mobile-nav");
-    hamburgerButtonElement.classList.toggle("is-active");
-    event.stopPropagation();
+const app = new App({
+    button: document.querySelector('#mobile-menu'),
+    drawer: document.querySelector('#nav-list'),
+    content: document.querySelector('#maincontent'),
 });
 
-hamburgerButtonElement.addEventListener("keypress", event => {
-    if (event.key === 'enter') {
-        drawerElement.classList.toggle("mobile-nav");
-        hamburgerButtonElement.classList.toggle("is-active");
-        event.stopPropagation();
-    }
+window.addEventListener('hashchange', () => {
+    app.renderPage();
 });
 
-mainElement.addEventListener("click", event => {
-    drawerElement.classList.remove("mobile-nav");
-    hamburgerButtonElement.classList.remove("is-active");
-    event.stopPropagation();
-})
-
-drawerElement.addEventListener("click", event => {
-    drawerElement.classList.remove("mobile-nav");
-    hamburgerButtonElement.classList.remove("is-active");
-    event.stopPropagation();
-})
-
-loadData();
+window.addEventListener('load', () => {
+    app.renderPage();
+});

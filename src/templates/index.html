@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>#MyRestoCatalogue</title>
-  </head>
-  <body>
-    <div id="app">
-      <a href="#maincontent" class="skip-link">Menuju ke konten</a>
-      <header>
-          <nav class="navbar">
-            <div class="logo">#MyRestoCatalogue</div>
-            <a href="#" class="menu-toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </a>
-            <ul class="nav-list" id="nav-list">
-              <li class="nav-item"><a href="index.html">Home</a></li>
-              <li class="nav-item"><a href="#">Favorite</a></li>
-              <li class="nav-item"><a href="https://www.linkedin.com/in/bayu-krisnamurti-89080537/">About US</a></li>
-            </ul>
-          </nav>
-      </header>
-      <main id="maincontent">
-        <section class="hero">
-          <h1>Anda Lapar?</h1>
-          <article>
-            <p>Jangan sampai kelaparan membuat anda menderita karena memilih tempat makan yang salah. <span>#MyRestoCatolague</span> solusi nya</p>
-            <a href="#" class="button">Find Now !!</a>
-          </article>
-        </section>
-        <section class="restos" id="restos">
-            <ul class="restolist"></ul>
-        </section>
-      </main>
-      <footer>
-          <p>Copyright &copy; 2021 - #MyRestoCatalogue</p>
-      </footer>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The Restaurant catalogue just for you">
+        <title>#MyRestoCatalogue</title>
+    </head>
+    <body>
+        <div id="app">
+            <a href="#maincontent" class="skip-link">Menuju ke konten</a>
+            <header>
+                <nav class="navbar">
+                    <div class="logo">#MyRestoCatalogue</div>
+                    <!--<a href="#" class="menu-toggle" id="mobile-menu">-->
+                    <button id="mobile-menu" class="menu-toggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    <!--</a>-->
+                    </button>
+                    <ul class="nav-list" id="nav-list">
+                        <li class="nav-item"><a href="#/list">Home</a></li>
+                        <li class="nav-item"><a href="#/fav">Favorite</a></li>
+                        <li class="nav-item"><a href="https://www.linkedin.com/in/bayu-krisnamurti-89080537/">About US</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main id="maincontent"></main>
+            <footer>
+                <p>Copyright &copy; 2021 - #MyRestoCatalogue</p>
+            </footer>
+        </div>
   </body>
 </html>
