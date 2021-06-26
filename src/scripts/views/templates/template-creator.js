@@ -4,7 +4,7 @@ const createRestoDetailTemplate = (resto) => ``;
 const createRestoItemTemplate = (resto) => `
 <li>
     <figure>
-        <img src="${resto.pictureId}" alt="gambar-resto-${resto.name}">
+        <img src="${CONFIG.BASE_IMG_URL}/small/${resto.pictureId}" alt="gambar-resto-${resto.name}">
         <figcaption><h3>${resto.name} - ${resto.city}</h3></figcaption>
     </figure>
     <article>
