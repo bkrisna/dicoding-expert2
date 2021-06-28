@@ -7,7 +7,7 @@ const routes = {
     '/': RestoList,
     '/list': RestoList,
     '/fav': RestoFav,
-    '/detail/id': RestoDetail,
+    '/detail/:id': RestoDetail,
 }
 
 export default routes;

@@ -1,22 +1,28 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
-    <h2 class="movie__title">${movie.title}</h2>
-        <img class="movie__poster" src="${CONFIG.BASE_IMG_URL + "/medium/" + movie.poster_path}" alt="${movie.title}" />
+    <h2 class="movie__title">${resto.name}</h2>
+        <img class="movie__poster" src="${CONFIG.BASE_IMG_URL + "/small/" + resto.pictureId}" alt="${resto.name}" />
         <div class="movie__info">
             <h3>Information</h3>
-            <h4>Tagline</h4>
-            <p>${movie.tagline}</p>
-            <h4>Release Date</h4>
-            <p>${movie.release_date}</p>
-            <h4>Duration</h4>
-            <p>${movie.runtime} minutes</p>
+            <h4>Location: </h4>
+            <p>${resto.city}</p>
+            <h4>Address: </h4>
+            <p>${resto.address}</p>
+            <h4>Categories:</h4>
+            <p></p>
             <h4>Rating</h4>
-            <p>${movie.vote_average}</p>
+            <p>${resto.rating}</p>
+            <h4>Menus: </h4>
         </div>
-        <div class="movie__overview">
-            <h3>Overview</h3>
-            <p>${movie.overview}</p>
+        <div class="resto_description">
+            <h3>Resto Description:</h3>
+            <p>${resto.description}</p>
+        </div>
+        <div>
+            <h3>Customer Review</h3>
+            <ul>
+            </ul>
         </div>
     </div>
 `;
