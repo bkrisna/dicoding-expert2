@@ -1,9 +1,9 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
-    <h2 class="movie__title">${resto.name}</h2>
-        <img class="movie__poster" src="${CONFIG.BASE_IMG_URL + "/small/" + resto.pictureId}" alt="${resto.name}" />
-        <div class="movie__info">
+    <h2 class="resto_title">${resto.name}</h2>
+        <img class="resto_poster" src="${CONFIG.BASE_IMG_URL + "/medium/" + resto.pictureId}" alt="${resto.name}" />
+        <div class="resto_info">
             <h3>Information</h3>
             <h4>Location: </h4>
             <p>${resto.city}</p>
@@ -19,12 +19,22 @@ const createRestoDetailTemplate = (resto) => `
             <h3>Resto Description:</h3>
             <p>${resto.description}</p>
         </div>
-        <div>
+        <div class="resto_review">
             <h3>Customer Review</h3>
-            <ul>
-            </ul>
         </div>
     </div>
+`;
+
+const createListItem = (name) => `
+    <li>${name}</li>
+`;
+
+const createRestoReviewItem = (item) => `
+    <li>
+        <h4>${item.name}</h4>
+        <p>${item.review}</p>
+        <p>${item.date}</p>
+    </li>
 `;
 
 const createRestoItemTemplate = (resto) => `

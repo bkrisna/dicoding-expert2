@@ -3,7 +3,6 @@ import { createRestoItemTemplate } from "../templates/template-creator";
 
 const RestoList = {
     async render() {
-        /*console.log('render /list');*/
         return `
             <section class="hero">
                 <h1>Anda Lapar?</h1>

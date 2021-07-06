@@ -184,7 +184,7 @@ p, a {
 .restos > ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
     list-style-type: none;
     padding: 0;
 }
@@ -192,6 +192,7 @@ p, a {
 .restos > ul > li {
     border: 1px solid #E2E2E2;
     border-radius: .5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
   
 .restos > ul > li > figure {
@@ -212,6 +213,7 @@ p, a {
     bottom: 0;
     background-color: rgba(0,0,0,.7);
     width: 100%;
+    overflow: hidden;
 }
   
 .restos > ul > li > figure > figcaption > h3 {
@@ -273,4 +275,20 @@ p, a {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#detailresto {
+    padding: 5px 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+#detailresto > .resto_poster {
+    height: 500px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: .5rem;
+    position: relative;
+    margin: 0;
+    max-width: 450px;
 }
