@@ -35,7 +35,7 @@ class RestoDetailElement extends HTMLElement {
         this.innerHTML = `
             <div id="detailresto" class="detailresto">
                 <h2 class="resto_title">${this._resto.name}</h2>
-                <img class="resto_poster" src="${CONFIG.BASE_IMG_URL + "/medium/" + this._resto.pictureId}" alt="${this._resto.name}" />
+                <img class="resto_poster" src="${CONFIG.IMG.IMG_MEDIUM(this._resto.pictureId)}" alt="${this._resto.name}" />
                 <div class="resto_info">
                     <h3>Information</h3>
                     <h4>Location: </h4>

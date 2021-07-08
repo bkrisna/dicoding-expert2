@@ -5,14 +5,11 @@ const LikeButtonInitiator = {
     async init({likeButtonContainer, resto}) {
         this._likeButtonContainer = likeButtonContainer;
         this._resto  = resto;
-
         await this._renderButton();
     },
 
     async _renderButton () {
         const { id } = this._resto;
-        console.log('check fav id');
-        console.log(id);
         if (await this._isRestoExist(id)) {
             this._renderLiked();
         } else {
@@ -21,10 +18,7 @@ const LikeButtonInitiator = {
     },
 
     async _isRestoExist(id) {
-        console.log('is_resto_exist');
         const resto = await FavRestoIdb.getResto(id);
-        console.log('result :');
-        console.log(resto);
         return !!resto;
     },
 

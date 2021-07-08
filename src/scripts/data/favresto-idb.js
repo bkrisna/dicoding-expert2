@@ -9,7 +9,6 @@ const dbPromise = openDB(CONFIG.DB_NAME, CONFIG.DB_VER, {
 
 const FavRestoIdb = {
     async getResto(id) {
-        console.log('get_resto_id: ' + id);
         return (await dbPromise).get(CONFIG.OBJ_STORE_NAME, id);
     },
 
@@ -18,8 +17,6 @@ const FavRestoIdb = {
     },
 
     async putResto(resto) {
-        console.log('put db hit');
-        console.log(resto);
         return (await dbPromise).put(CONFIG.OBJ_STORE_NAME, resto);
     },
 

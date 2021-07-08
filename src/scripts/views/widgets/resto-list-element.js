@@ -13,7 +13,7 @@ class RestoListElement extends HTMLElement {
                 itemsEl += `
                     <li>
                         <figure>
-                            <img src="${CONFIG.BASE_IMG_URL}/small/${item.pictureId}" alt="gambar-resto-${item.name}">
+                            <img src="${CONFIG.IMG.IMG_SMALL(item.pictureId)}" alt="gambar-resto-${item.name}">
                             <figcaption><h3>${item.name} - ${item.city}</h3></figcaption>
                         </figure>
                         <article>
