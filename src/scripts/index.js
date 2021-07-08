@@ -5,6 +5,7 @@ import App from './views/app';
 import swRegister from './utils/sw-register';
 import './views/widgets/nav-bar';
 import './views/widgets/footer-bar';
+import './views/widgets/hero-bar';
 
 const app = new App({
     button: document.querySelector('#mobile-menu'),
