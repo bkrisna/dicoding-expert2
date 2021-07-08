@@ -15,12 +15,19 @@ const RestoDetail = {
         const url = UrlParser.parseActiveUrlWithoutCombiner();
         const resto = await RestoApiSource.detailResto(url.id);
         const detailItems = document.querySelector('resto-detail');
-        console.log(resto);
         detailItems.resto = resto;
 
         LikeButtonInitiator.init({
             likeButtonContainer : document.querySelector('#likeButtonContainer'),
-            resto: resto,
+            resto: {
+                id: resto.id,
+                name: resto.name,
+                address: resto.address,
+                city: resto.city,
+                pictureId: resto.pictureId,
+                rating: resto.rating,
+                description: resto.description
+            },
         });
     },
 };

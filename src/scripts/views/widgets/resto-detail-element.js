@@ -2,15 +2,11 @@ import CONFIG from "../../globals/config";
 
 class RestoDetailElement extends HTMLElement {
     set resto(values) {
-        this._resto = values.restaurant;
-        console.log('from inside custom el:')
-        console.log(this._resto);
+        this._resto = values;
         this.render();
     }
 
     _renderItems(items) {
-        console.log('from insde function');
-        console.log(items);
         let itemsEl = '';
         if (Object.keys(items).length !== 0) {
             items.forEach((item) => {

@@ -11,6 +11,8 @@ const LikeButtonInitiator = {
 
     async _renderButton () {
         const { id } = this._resto;
+        console.log('check fav id');
+        console.log(id);
         if (await this._isRestoExist(id)) {
             this._renderLiked();
         } else {
@@ -19,12 +21,15 @@ const LikeButtonInitiator = {
     },
 
     async _isRestoExist(id) {
+        console.log('is_resto_exist');
         const resto = await FavRestoIdb.getResto(id);
+        console.log('result :');
+        console.log(resto);
         return !!resto;
     },
 
     _renderLike() {
-        this.likeButtonContainer.innerHTML = createLikedButtonTemplate();
+        this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
         const likeButton = document.querySelector('#likeButton');
         likeButton.addEventListener('click', async () => {
             await FavRestoIdb.putResto(this._resto);
@@ -33,7 +38,7 @@ const LikeButtonInitiator = {
     },
 
     _renderLiked() {
-        this.likeButtonContainer.innerHTML = createLikedButtonTemplate();
+        this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
         const likeButton = document.querySelector('#likeButton');
         likeButton.addEventListener('click', async () => {
             await FavRestoIdb.deleteResto(this._resto.id);
