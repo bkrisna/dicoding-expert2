@@ -1,4 +1,4 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 
 class RestoDetailElement extends HTMLElement {
     set resto(values) {
@@ -24,7 +24,12 @@ class RestoDetailElement extends HTMLElement {
                     <li>    
                         <blockquote>
                             <p>${comment.review}</p>
-                            <cite>${comment.date} by <strong>${comment.name}</strong></cite>
+                            <cite>
+                                ${comment.date} by 
+                                <strong>
+                                    ${comment.name}
+                                </strong>
+                            </cite>
                         </blockquote>
                     </li>
                 `;
@@ -37,7 +42,8 @@ class RestoDetailElement extends HTMLElement {
         this.innerHTML = `
             <div id="detailresto" class="detailresto">
                 <figure>
-                    <img class="resto_poster" src="${CONFIG.IMG.IMG_MEDIUM(this._resto.pictureId)}" alt="${this._resto.name}" />
+                    <img class="resto_poster" src="${CONFIG.IMG.imgMedium(this._resto.pictureId)}" 
+                    alt="${this._resto.name}" />
                 </figure>
                 <section class="resto_info">
                     <h2 class="resto_title">${this._resto.name}</h2>
@@ -57,25 +63,33 @@ class RestoDetailElement extends HTMLElement {
                         </li>
                         <li>
                             <strong>Categories:</strong>
-                            <ul class="boxed_list">${this._renderItems(this._resto.categories)}</ul>
+                            <ul class="boxed_list">
+                                ${this._renderItems(this._resto.categories)}
+                            </ul>
                         </li>
                         <li>
                             <strong>Foods:</strong>
-                            <ul class="boxed_list">${this._renderItems(this._resto.menus.foods)}</ul>
+                            <ul class="boxed_list">
+                                ${this._renderItems(this._resto.menus.foods)}
+                            </ul>
                         </li>
                         <li>
                             <strong>Drinks:</strong>
-                            <ul class="boxed_list">${this._renderItems(this._resto.menus.drinks)}</ul>
+                            <ul class="boxed_list">
+                                ${this._renderItems(this._resto.menus.drinks)}
+                            </ul>
                         </li>
                     </ul>
                     <div class="resto_review">
                         <h3>Customer Review:</h3>
-                        <ul class="user-reviews">${this._renderComments(this._resto.customerReviews)}</ul>
+                        <ul class="user-reviews">
+                            ${this._renderComments(this._resto.customerReviews)}
+                        </ul>
                     </div>
                 </section>
             </div>
         `;
     }
-}
-    
-customElements.define("resto-detail", RestoDetailElement);
+};
+
+customElements.define('resto-detail', RestoDetailElement);

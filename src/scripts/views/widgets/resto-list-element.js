@@ -1,4 +1,4 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
 
 class RestoListElement extends HTMLElement {
     set restos(values) {
@@ -13,8 +13,10 @@ class RestoListElement extends HTMLElement {
                 itemsEl += `
                     <li>
                         <figure>
-                            <img src="${CONFIG.IMG.IMG_SMALL(item.pictureId)}" alt="gambar-resto-${item.name}">
-                            <figcaption><h3>${item.name} - ${item.city}</h3></figcaption>
+                            <img src="${CONFIG.IMG.imgSmall(item.pictureId)}" alt="gambar-resto-${item.name}">
+                            <figcaption>
+                                <h3>${item.name} - ${item.city}</h3>
+                            </figcaption>
                         </figure>
                         <article>
                             <h3>Rating: ${item.rating}<h3>
@@ -22,7 +24,9 @@ class RestoListElement extends HTMLElement {
                                 ${item.description}
                             </p>
                         </article>
-                        <a href="#/detail/${item.id}" class="button">Read More ...</a>
+                        <a href="#/detail/${item.id}" class="button">
+                            Read More ...
+                        </a>
                     </li>    
                 `;
             });
@@ -39,6 +43,6 @@ class RestoListElement extends HTMLElement {
             </section>
         `;
     }
-}
-    
-customElements.define("resto-list", RestoListElement);
+};
+
+customElements.define('resto-list', RestoListElement);

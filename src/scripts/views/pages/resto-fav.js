@@ -1,5 +1,4 @@
-import FavRestoIdb from "../../data/favresto-idb";
-import { createRestoItemTemplate } from "../templates/template-creator";
+import FavRestoIdb from '../../data/favresto-idb';
 
 const RestoFav = {
     async render() {
@@ -13,7 +12,7 @@ const RestoFav = {
         const restos = await FavRestoIdb.getAllRestos();
         const restoContainer = document.querySelector('resto-list');
         restoContainer.restos = restos;
-    }
+    },
 };
 
 export default RestoFav;

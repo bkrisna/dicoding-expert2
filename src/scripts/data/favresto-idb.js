@@ -1,9 +1,9 @@
-import { openDB } from 'idb';
+import {openDB} from 'idb';
 import CONFIG from '../globals/config';
 
 const dbPromise = openDB(CONFIG.DB_NAME, CONFIG.DB_VER, {
     upgrade(database) {
-        database.createObjectStore(CONFIG.OBJ_STORE_NAME, { keyPath: 'id'});
+        database.createObjectStore(CONFIG.OBJ_STORE_NAME, {keyPath: 'id'});
     },
 });
 
@@ -22,7 +22,7 @@ const FavRestoIdb = {
 
     async deleteResto(id) {
         return (await dbPromise).delete(CONFIG.OBJ_STORE_NAME, id);
-    }
-}
+    },
+};
 
 export default FavRestoIdb;

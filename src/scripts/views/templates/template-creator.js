@@ -1,26 +1,26 @@
 import CONFIG from '../../globals/config';
 
 const createMenuButton = () => {
-    const menuButton = document.createElement('button', {is: 'menu-button' });
-    menuButton.setAttribute('id','mobile-menu');
-    menuButton.setAttribute('class','menu-toggle');
-    menuButton.setAttribute('aria-label','Menu Button')
-    menuButton.setAttribute('buttonItemClass','bar');
+    const menuButton = document.createElement('button', {is:'menu-button'});
+    menuButton.setAttribute('id', 'mobile-menu');
+    menuButton.setAttribute('class', 'menu-toggle');
+    menuButton.setAttribute('aria-label', 'Menu Button');
+    menuButton.setAttribute('buttonItemClass', 'bar');
     return menuButton;
 };
 
 const createMenuTitle = () => {
     const menuTitle = document.createElement('div');
-    menuTitle.setAttribute('class','logo');
+    menuTitle.setAttribute('class', 'logo');
     menuTitle.innerHTML = `${CONFIG.APP_NAME}`;
     return menuTitle;
 };
 
 const createMenuList = (list) => {
-    const menuList = document.createElement('ul', {is: 'menu-list'});
-    menuList.setAttribute('class','nav-list');
-    menuList.setAttribute('id','nav-list');
-    menuList.setAttribute('navItemClass','nav-item');
+    const menuList = document.createElement('ul', { is:'menu-list'});
+    menuList.setAttribute('class', 'nav-list');
+    menuList.setAttribute('id', 'nav-list');
+    menuList.setAttribute('navItemClass', 'nav-item');
     menuList.setAttribute('navItems', JSON.stringify(list));
     return menuList;
 };
@@ -34,35 +34,7 @@ const createNavBar = (navTitle, navButton, navLink) => {
     return navBar;
 };
 
-const createFooter = () =>  `<p>Copyright &copy; 2021 - #MyRestoCatalogue</p>`;
-
-const createListItem = (name) => `
-    <li>${name}</li>
-`;
-
-const createRestoReviewItem = (item) => `
-    <li>
-        <h4>${item.name}</h4>
-        <p>${item.review}</p>
-        <p>${item.date}</p>
-    </li>
-`;
-
-const createRestoItemTemplate = (resto) => `
-    <li>
-        <figure>
-            <img src="${CONFIG.BASE_IMG_URL}/small/${resto.pictureId}" alt="gambar-resto-${resto.name}">
-            <figcaption><h3>${resto.name} - ${resto.city}</h3></figcaption>
-        </figure>
-        <article>
-            <h3>Rating: ${resto.rating}<h3>
-            <p class="text-concat">
-                ${resto.description}
-            </p>
-        </article>
-        <a href="#/detail/${resto.id}" class="button">Read More ...</a>
-    </li>
-`;
+const createFooter = () => `<p>Copyright &copy; 2021 - #MyRestoCatalogue</p>`;
 
 const createLikeButtonTemplate = () => `
     <button aria-label="like this restaurant" id="likeButton" class="like">
@@ -76,12 +48,12 @@ const createLikedButtonTemplate = () => `
     </button>
 `;
 
-export { 
+export {
     createMenuTitle,
     createMenuButton,
     createMenuList,
     createNavBar,
     createFooter,
     createLikeButtonTemplate,
-    createLikedButtonTemplate
+    createLikedButtonTemplate,
 };

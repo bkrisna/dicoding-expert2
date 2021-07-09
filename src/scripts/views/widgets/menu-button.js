@@ -1,5 +1,3 @@
-const { wrap } = require("idb");
-
 class MenuButton extends HTMLButtonElement {
     constructor() {
         super();
@@ -8,7 +6,7 @@ class MenuButton extends HTMLButtonElement {
     connectedCallback() {
         this.render();
     }
-        
+
     render() {
         const buttonClass = this.hasAttribute('buttonItemClass') ? this.getAttribute('buttonItemClass') : '';
         for (let i=0; i< 3; i++) {
@@ -17,6 +15,6 @@ class MenuButton extends HTMLButtonElement {
             this.appendChild(buttonBar);
         }
     }
-}
+};
 
-customElements.define("menu-button", MenuButton, { extends: 'button' });
+customElements.define('menu-button', MenuButton, {extends: 'button'});

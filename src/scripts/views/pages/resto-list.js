@@ -1,5 +1,4 @@
-import RestoApiSource from "../../data/restoapi-source";
-import { createRestoItemTemplate } from "../templates/template-creator";
+import RestoApiSource from '../../data/restoapi-source';
 
 const RestoList = {
     async render() {
@@ -13,7 +12,7 @@ const RestoList = {
         const restos = await RestoApiSource.restoList();
         const restoContainer = document.querySelector('resto-list');
         restoContainer.restos = restos;
-    }
+    },
 };
 
 export default RestoList;

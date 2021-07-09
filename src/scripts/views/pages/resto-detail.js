@@ -1,6 +1,5 @@
 import UrlParser from '../../routes/url-parser';
 import RestoApiSource from '../../data/restoapi-source';
-import { createLikeButtonTemplate, createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const RestoDetail = {
@@ -18,7 +17,7 @@ const RestoDetail = {
         detailItems.resto = resto;
 
         LikeButtonInitiator.init({
-            likeButtonContainer : document.querySelector('#likeButtonContainer'),
+            likeButtonContainer: document.querySelector('#likeButtonContainer'),
             resto: {
                 id: resto.id,
                 name: resto.name,
@@ -26,7 +25,7 @@ const RestoDetail = {
                 city: resto.city,
                 pictureId: resto.pictureId,
                 rating: resto.rating,
-                description: resto.description
+                description: resto.description,
             },
         });
     },

@@ -6,7 +6,7 @@ class MenuList extends HTMLUListElement {
     connectedCallback() {
         this.render();
     }
-        
+
     render() {
         const navItemsClass = this.hasAttribute('navItemClass') ? this.getAttribute('navItemClass') : '';
         let navItems = this.hasAttribute('navItems') ? this.getAttribute('navItems') : '{}';
@@ -21,6 +21,6 @@ class MenuList extends HTMLUListElement {
             this.appendChild(navItemWrapper);
         });
     }
-}
+};
 
-customElements.define("menu-list", MenuList, { extends: 'ul' });
+customElements.define('menu-list', MenuList, {extends: 'ul'});

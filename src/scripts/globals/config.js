@@ -8,9 +8,9 @@ const CONFIG = {
     DB_VER: 1,
     OBJ_STORE_NAME: 'restos',
     IMG : {
-        IMG_SMALL: (picid) => `${CONFIG.BASE_IMG_URL}/small/${picid}`,
-        IMG_MEDIUM: (picid) => `${CONFIG.BASE_IMG_URL}/medium/${picid}`,
-        IMG_LARGE: (picid) => `${CONFIG.BASE_IMG_URL}/large/${picid}`
+        imgSmall: (picid) => `${CONFIG.BASE_IMG_URL}/small/${picid}`,
+        imgMedium: (picid) => `${CONFIG.BASE_IMG_URL}/medium/${picid}`,
+        imgLarge: (picid) => `${CONFIG.BASE_IMG_URL}/large/${picid}`
     },
     MENU_ITEMS:[{
         name: 'Home',
