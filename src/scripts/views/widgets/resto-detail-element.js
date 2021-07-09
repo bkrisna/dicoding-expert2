@@ -21,10 +21,12 @@ class RestoDetailElement extends HTMLElement {
         if (Object.keys(comments).length !== 0) {
             comments.forEach((comment) => {
                 commentEl += `
-                    <div class="user-review-item">
-                        <h3>${comment.name}<span>${comment.date}</span></h3>
-                        <p>${comment.review}</p>
-                    </div>
+                    <li>    
+                        <blockquote>
+                            <p>${comment.review}</p>
+                            <cite>${comment.date} by <strong>${comment.name}</strong></cite>
+                        </blockquote>
+                    </li>
                 `;
             });
         }
@@ -34,32 +36,43 @@ class RestoDetailElement extends HTMLElement {
     render() {
         this.innerHTML = `
             <div id="detailresto" class="detailresto">
-                <h2 class="resto_title">${this._resto.name}</h2>
-                <img class="resto_poster" src="${CONFIG.IMG.IMG_MEDIUM(this._resto.pictureId)}" alt="${this._resto.name}" />
-                <div class="resto_info">
-                    <h3>Information</h3>
-                    <h4>Location: </h4>
-                    <p>${this._resto.city}</p>
-                    <h4>Address: </h4>
-                    <p>${this._resto.address}</p>
-                    <h4>Categories:</h4>
-                    <ul>${this._renderItems(this._resto.categories)}</ul>
-                    <h4>Rating</h4>
-                    <p>${this._resto.rating}</p>
-                    <h4>Menus: </h4>
-                    <p>Drinks:  </p>
-                    <ul>${this._renderItems(this._resto.menus.drinks)}</ul>
-                    <p>Foods:  </p>
-                    <ul>${this._renderItems(this._resto.menus.foods)}</ul>
-                </div>
-                <div class="resto_description">
-                    <h3>Resto Description:</h3>
-                    <p>${this._resto.description}</p>
-                </div>
-                <div class="resto_review">
-                    <h3>Customer Review</h3>
-                    <ul>${this._renderComments(this._resto.customerReviews)}</ul>
-                </div>
+                <figure>
+                    <img class="resto_poster" src="${CONFIG.IMG.IMG_MEDIUM(this._resto.pictureId)}" alt="${this._resto.name}" />
+                </figure>
+                <section class="resto_info">
+                    <h2 class="resto_title">${this._resto.name}</h2>
+                    <div class="resto_description">
+                        <h3>Resto Description:</h3>
+                        <p>${this._resto.description}</p>
+                    </div>
+                    <ul class="resto_meta">
+                        <li>
+                            <strong>Rating:</strong> ${this._resto.rating}
+                        </li>
+                        <li>
+                            <strong>City:</strong> ${this._resto.city}
+                        </li>
+                        <li>
+                            <strong>Address:</strong> ${this._resto.address}
+                        </li>
+                        <li>
+                            <strong>Categories:</strong>
+                            <ul class="boxed_list">${this._renderItems(this._resto.categories)}</ul>
+                        </li>
+                        <li>
+                            <strong>Foods:</strong>
+                            <ul class="boxed_list">${this._renderItems(this._resto.menus.foods)}</ul>
+                        </li>
+                        <li>
+                            <strong>Drinks:</strong>
+                            <ul class="boxed_list">${this._renderItems(this._resto.menus.drinks)}</ul>
+                        </li>
+                    </ul>
+                    <div class="resto_review">
+                        <h3>Customer Review:</h3>
+                        <ul class="user-reviews">${this._renderComments(this._resto.customerReviews)}</ul>
+                    </div>
+                </section>
             </div>
         `;
     }

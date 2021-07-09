@@ -1,29 +1,40 @@
 import CONFIG from '../../globals/config';
 
-const createRestoDetailTemplate = (resto) => `
-    <h2 class="resto_title">${resto.name}</h2>
-        <img class="resto_poster" src="${CONFIG.BASE_IMG_URL + "/medium/" + resto.pictureId}" alt="${resto.name}" />
-        <div class="resto_info">
-            <h3>Information</h3>
-            <h4>Location: </h4>
-            <p>${resto.city}</p>
-            <h4>Address: </h4>
-            <p>${resto.address}</p>
-            <h4>Categories:</h4>
-            <p></p>
-            <h4>Rating</h4>
-            <p>${resto.rating}</p>
-            <h4>Menus: </h4>
-        </div>
-        <div class="resto_description">
-            <h3>Resto Description:</h3>
-            <p>${resto.description}</p>
-        </div>
-        <div class="resto_review">
-            <h3>Customer Review</h3>
-        </div>
-    </div>
-`;
+const createMenuButton = () => {
+    const menuButton = document.createElement('button', {is: 'menu-button' });
+    menuButton.setAttribute('id','mobile-menu');
+    menuButton.setAttribute('class','menu-toggle');
+    menuButton.setAttribute('aria-label','Menu Button')
+    menuButton.setAttribute('buttonItemClass','bar');
+    return menuButton;
+};
+
+const createMenuTitle = () => {
+    const menuTitle = document.createElement('div');
+    menuTitle.setAttribute('class','logo');
+    menuTitle.innerHTML = `${CONFIG.APP_NAME}`;
+    return menuTitle;
+};
+
+const createMenuList = (list) => {
+    const menuList = document.createElement('ul', {is: 'menu-list'});
+    menuList.setAttribute('class','nav-list');
+    menuList.setAttribute('id','nav-list');
+    menuList.setAttribute('navItemClass','nav-item');
+    menuList.setAttribute('navItems', JSON.stringify(list));
+    return menuList;
+};
+
+const createNavBar = (navTitle, navButton, navLink) => {
+    const navBar = document.createElement('nav');
+    navBar.setAttribute('class', 'navbar');
+    navBar.appendChild(navTitle);
+    navBar.appendChild(navButton);
+    navBar.appendChild(navLink);
+    return navBar;
+};
+
+const createFooter = () =>  `<p>Copyright &copy; 2021 - #MyRestoCatalogue</p>`;
 
 const createListItem = (name) => `
     <li>${name}</li>
@@ -66,8 +77,11 @@ const createLikedButtonTemplate = () => `
 `;
 
 export { 
-    createRestoItemTemplate, 
-    createRestoDetailTemplate,
+    createMenuTitle,
+    createMenuButton,
+    createMenuList,
+    createNavBar,
+    createFooter,
     createLikeButtonTemplate,
     createLikedButtonTemplate
 };
