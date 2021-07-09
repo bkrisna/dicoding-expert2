@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config';
 
 const createMenuButton = () => {
-    const menuButton = document.createElement('button', {is:'menu-button'});
+    const menuButton = document.createElement('button', {is: 'menu-button'});
     menuButton.setAttribute('id', 'mobile-menu');
     menuButton.setAttribute('class', 'menu-toggle');
     menuButton.setAttribute('aria-label', 'Menu Button');
@@ -17,7 +17,7 @@ const createMenuTitle = () => {
 };
 
 const createMenuList = (list) => {
-    const menuList = document.createElement('ul', { is:'menu-list'});
+    const menuList = document.createElement('ul', {is: 'menu-list'});
     menuList.setAttribute('class', 'nav-list');
     menuList.setAttribute('id', 'nav-list');
     menuList.setAttribute('navItemClass', 'nav-item');

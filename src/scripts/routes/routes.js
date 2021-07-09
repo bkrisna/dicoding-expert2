@@ -8,6 +8,6 @@ const routes = {
     '/list': RestoList,
     '/fav': RestoFav,
     '/detail/:id': RestoDetail,
-}
+};
 
 export default routes;

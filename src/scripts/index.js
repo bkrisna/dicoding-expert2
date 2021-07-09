@@ -8,12 +8,12 @@ import './views/widgets/resto-list-element';
 import './views/widgets/resto-detail-element';
 import './views/widgets/menu-button';
 import './views/widgets/menu-list';
-import { 
-    createFooter, 
-    createMenuButton, 
-    createMenuList, 
-    createMenuTitle, 
-    createNavBar 
+import {
+    createFooter,
+    createMenuButton,
+    createMenuList,
+    createMenuTitle,
+    createNavBar,
 } from './views/templates/template-creator';
 import CONFIG from './globals/config';
 

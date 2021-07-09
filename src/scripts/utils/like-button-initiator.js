@@ -1,15 +1,15 @@
 import FavRestoIdb from '../data/favresto-idb';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
+import {createLikeButtonTemplate, createLikedButtonTemplate} from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {
     async init({likeButtonContainer, resto}) {
         this._likeButtonContainer = likeButtonContainer;
-        this._resto  = resto;
+        this._resto = resto;
         await this._renderButton();
     },
 
-    async _renderButton () {
-        const { id } = this._resto;
+    async _renderButton() {
+        const {id} = this._resto;
         if (await this._isRestoExist(id)) {
             this._renderLiked();
         } else {
@@ -28,7 +28,7 @@ const LikeButtonInitiator = {
         likeButton.addEventListener('click', async () => {
             await FavRestoIdb.putResto(this._resto);
             this._renderButton();
-        })
+        });
     },
 
     _renderLiked() {
@@ -37,8 +37,8 @@ const LikeButtonInitiator = {
         likeButton.addEventListener('click', async () => {
             await FavRestoIdb.deleteResto(this._resto.id);
             this._renderButton();
-        })
-    }
+        });
+    },
 };
 
 export default LikeButtonInitiator;
